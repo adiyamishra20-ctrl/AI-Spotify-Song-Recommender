@@ -19,6 +19,221 @@ st.set_page_config(
 
 ROOT = Path(__file__).resolve().parent
 
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background:
+            radial-gradient(
+                ellipse at 85% 5%,
+                rgba(133, 80, 154, 0.24),
+                transparent 48%
+            ),
+            radial-gradient(
+                ellipse at 5% 45%,
+                rgba(100, 75, 145, 0.16),
+                transparent 42%
+            ),
+            #171429;
+    }
+
+    .block-container {
+        max-width: 1150px;
+        padding-top: 2.5rem;
+        padding-bottom: 3rem;
+    }
+
+    .moonlit-hero {
+        position: relative;
+        overflow: hidden;
+        padding: 3.5rem 2.5rem;
+        margin-bottom: 1.8rem;
+        border: 1px solid rgba(220, 185, 235, 0.18);
+        border-radius: 28px;
+        background:
+            radial-gradient(
+                ellipse at 78% 30%,
+                rgba(230, 156, 188, 0.22),
+                transparent 30%
+            ),
+            radial-gradient(
+                ellipse at 40% 110%,
+                rgba(161, 95, 169, 0.35),
+                transparent 65%
+            ),
+            linear-gradient(135deg, #211c3b, #352547 65%, #241c36);
+    }
+
+    .moonlit-hero .eyebrow {
+        color: #E9AEC6;
+        font-size: 0.75rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        margin-bottom: 0.9rem;
+    }
+
+    .moonlit-hero h1 {
+        color: #FAF2F7;
+        font-family: Georgia, serif;
+        font-size: clamp(2.4rem, 6vw, 4rem);
+        font-weight: 400;
+        line-height: 1.15;
+        margin: 0;
+        padding: 0;
+    }
+
+    .moonlit-hero .tagline {
+        color: #DCCDE7;
+        font-size: 1.05rem;
+        margin-top: 1rem;
+        margin-bottom: 0;
+        max-width: 65%;
+        line-height: 1.7;
+    }
+
+    .moon-orb {
+        position: absolute;
+        right: 9%;
+        top: 28%;
+        width: 76px;
+        height: 76px;
+        border-radius: 50%;
+        background:
+            radial-gradient(
+                circle at 35% 30%,
+                #FFF0DB,
+                #EFC2C9 55%,
+                #C18EAF
+            );
+        box-shadow:
+            0 0 35px rgba(239, 194, 201, 0.30),
+            0 0 90px rgba(214, 157, 195, 0.18);
+    }
+
+    [data-testid="stForm"] {
+        background: rgba(36, 29, 53, 0.88);
+        border: 1px solid rgba(209, 174, 225, 0.20);
+        border-radius: 22px;
+        padding: 1.5rem;
+    }
+
+    [data-testid="stVerticalBlockBorderWrapper"] {
+        border-radius: 20px !important;
+        border-color: rgba(209, 174, 225, 0.20) !important;
+    }
+
+    .stButton > button,
+    .stLinkButton > a,
+    [data-testid="stFormSubmitButton"] button {
+        border-radius: 12px;
+        transition: box-shadow 0.2s ease;
+    }
+
+    .stButton > button:hover,
+    .stLinkButton > a:hover,
+    [data-testid="stFormSubmitButton"] button:hover {
+        border-color: #E9AEC6;
+        box-shadow: 0 0 18px rgba(233, 174, 198, 0.15);
+    }
+
+    @media (max-width: 640px) {
+        .moonlit-hero {
+            padding: 2.2rem 1.4rem;
+        }
+
+        .moonlit-hero .tagline {
+            max-width: 100%;
+        }
+
+        .moon-orb {
+            width: 36px;
+            height: 36px;
+            top: 1.2rem;
+            right: 1.2rem;
+        }
+    }
+    </style>
+
+    """,
+    unsafe_allow_html=True,
+)
+
+st.markdown(
+    """
+<style>
+h1, h2, h3 {
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.025em;
+}
+
+button, input, select, textarea {
+    font-family: "Segoe UI", Arial, sans-serif !important;
+}
+
+.stButton > button,
+.stLinkButton > a,
+[data-testid="stFormSubmitButton"] button {
+    background: linear-gradient(135deg, #382947, #483253);
+    color: #FAF2F7 !important;
+    border: 1px solid #92729F;
+    border-radius: 14px;
+    min-height: 44px;
+    padding: 0.65rem 1.2rem;
+    font-weight: 600;
+    transition:
+        transform 180ms ease,
+        box-shadow 180ms ease,
+        border-color 180ms ease;
+}
+
+[data-testid="stFormSubmitButton"] button {
+    background: linear-gradient(120deg, #EDBCD0, #CFB6EB);
+    color: #241A32 !important;
+    border-color: #F0CADB;
+}
+
+[data-testid="stFormSubmitButton"] button p {
+    color: inherit !important;
+}
+
+@media (hover: hover) {
+    .stButton > button:not(:disabled):hover,
+    .stLinkButton > a:hover,
+    [data-testid="stFormSubmitButton"] button:not(:disabled):hover {
+        transform: translateY(-3px);
+        border-color: #F0CADB;
+        box-shadow:
+            0 8px 22px rgba(0, 0, 0, 0.22),
+            0 0 20px rgba(233, 174, 198, 0.24);
+    }
+}
+
+.stButton > button:not(:disabled):active,
+.stLinkButton > a:active,
+[data-testid="stFormSubmitButton"] button:not(:disabled):active {
+    transform: translateY(0) scale(0.98);
+}
+
+.stButton > button:focus-visible,
+.stLinkButton > a:focus-visible,
+[data-testid="stFormSubmitButton"] button:focus-visible {
+    outline: 3px solid #F0CADB;
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stButton > button,
+    .stLinkButton > a,
+    [data-testid="stFormSubmitButton"] button {
+        transition: none !important;
+        transform: none !important;
+    }
+}
+</style>
+    """,
+    unsafe_allow_html=True,
+)
 
 def identity(title, artist):
     return (
@@ -94,8 +309,20 @@ def effective_moods(song, reviews):
     )
 
 
-st.title("🎵 Song Compass")
-st.write("How do you want your music to feel?")
+st.markdown(
+    """
+    <section class="moonlit-hero">
+        <div class="moon-orb" aria-hidden="true"></div>
+        <div class="eyebrow">Music for your moment</div>
+        <h1>Song Compass</h1>
+        <p class="tagline">
+            A soundtrack for your state of mind.<br>
+            Choose a mood. Discover your next song.
+        </p>
+    </section>
+    """,
+    unsafe_allow_html=True,
+)
 
 try:
     songs, raw_features, embeddings = load_models()
