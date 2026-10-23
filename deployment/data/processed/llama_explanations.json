@@ -1,0 +1,63 @@
+{
+  "f781800743785b5908ca9fef22ff8d4ad7cfbaedc7729f59d328aba98b0ea274": {
+    "text": "Both songs have the listener tags \"pop\" and \"romantic\". They share the \"mellow\" and \"relaxing\" tags, which align with the requested calm mood.",
+    "evidence": {
+      "reference_title": "Hold On",
+      "recommended_title": "Bubbly",
+      "shared_genre_tags": [
+        "pop",
+        "rock",
+        "soft rock"
+      ],
+      "shared_mood_tags": [
+        "mellow",
+        "relaxing",
+        "romantic",
+        "uplifting"
+      ],
+      "requested_mood": "calm",
+      "requested_mood_is_tagged": true
+    },
+    "model": "llama3.2:3b"
+  },
+  "7b4a33ce63c4e856ced0b8d0ce0508832081a4dc6b0185830e65595ee47dcaee": {
+    "text": "Both songs have the listener tags \"pop\" and \"romantic\". They also share the genre tags \"pop\", \"rock\", and \"soft rock\".",
+    "evidence": {
+      "reference_title": "Hold On",
+      "recommended_title": "Lips of an Angel",
+      "shared_genre_tags": [
+        "pop",
+        "rock",
+        "soft rock"
+      ],
+      "shared_mood_tags": [
+        "emotional",
+        "mellow",
+        "romantic"
+      ],
+      "requested_mood": "emotional",
+      "requested_mood_is_tagged": true
+    },
+    "model": "llama3.2:3b"
+  },
+  "4f37f8672538cf3791b34160d84b45890f594639de724a5b31fcda15b4e46e57": {
+    "text": "The recommended song \"Lips of an Angel\" shares the listener tags \"pop\", \"rock\", and \"soft rock\", and is tagged with the requested mood \"sad\".",
+    "evidence": {
+      "reference_title": "Hold On",
+      "recommended_title": "Lips of an Angel",
+      "shared_genre_tags": [
+        "pop",
+        "rock",
+        "soft rock"
+      ],
+      "shared_mood_tags": [
+        "emotional",
+        "mellow",
+        "romantic"
+      ],
+      "requested_mood": "sad",
+      "requested_mood_is_tagged": true
+    },
+    "model": "llama3.2:3b"
+  }
+}
